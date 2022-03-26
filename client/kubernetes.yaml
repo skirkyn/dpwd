@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pass_checker
+  labels:
+    app: pass_checker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pass_checker
+  template:
+    metadata:
+      labels:
+        app: pass_checker
+    spec:
+      containers:
+        - name: pass_checker
+          image: skirkyn/skirkyn:pass_checker
+          imagePullPolicy: Always
+
+
